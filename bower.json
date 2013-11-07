@@ -6,6 +6,8 @@
     "jquery": "~2.0.3",
     "fastclick": "~0.6.10",
     "html5shiv": "~3.7.0",
-    "susy": "~1.0.9"
+    "susy": "~1.0.9",
+    "skrollr": "~0.6.17",
+    "skrollr-menu": "~0.1.8"
   }
 }
