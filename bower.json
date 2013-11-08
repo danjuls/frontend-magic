@@ -8,6 +8,9 @@
     "html5shiv": "~3.7.0",
     "susy": "~1.0.9",
     "skrollr": "~0.6.17",
-    "skrollr-menu": "~0.1.8"
+    "skrollr-menu": "~0.1.8",
+    "font-awesome": "~4.0.3",
+    "socialfeed": "~0.3.7",
+    "classie": "~1.0.0"
   }
 }

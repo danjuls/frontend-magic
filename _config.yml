@@ -5,7 +5,7 @@
 
 # Use _config.build.yml to override these settings on `grunt build`.
 
-name: frontend-magic
+name: danjuls.se
 description: Daniel Andreasson
 
 author:
