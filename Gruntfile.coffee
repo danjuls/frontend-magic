@@ -272,6 +272,15 @@ module.exports = (grunt) ->
           dest: ".tmp/css"
         ]
 
+      stageFonts:
+        files: [
+          dot: true
+          expand: true
+          cwd: '<%= yeoman.app %>/_bower_components/font-awesome/fonts/'
+          src: '**/*'
+          dest: '.tmp/fonts'
+        ]
+
     rev:
       options:
         length: 4
@@ -307,7 +316,7 @@ module.exports = (grunt) ->
         src: ["<%= yeoman.app %>}/css/**/*.css", "<%= yeoman.app %>}/_sass/**/*.scss"]
 
     concurrent:
-      server: ["compass:server", "coffee:dist", "copy:stageCss", "jekyll:server"]
+      server: ["compass:server", "coffee:dist", "copy:stageCss", "copy:stageFonts", "jekyll:server"]
       dist: ["compass:dist", "coffee:dist", "copy:dist"]
 
 
