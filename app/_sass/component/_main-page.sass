@@ -9,7 +9,7 @@
     // Establish our new 12-column container.
     +container
 
-  
+
 
 .pusher
   position: relative
@@ -36,18 +36,17 @@
 .title
   +border-radius(50%)
   background-color: #000000
-  float: left
   width: px-to-rem(200)
   height: px-to-rem(200)
   color: #ffffff
   text-align: center
   display: table
-
-  span 
+  margin: 0 auto
+  span
     display: table-cell
     vertical-align: middle
-  
-  h1
+
+  h2
     font-size: px-to-rem(20)
     margin: 0
     padding: 0
@@ -58,5 +57,33 @@
   a
     color: #ffffff
     text-transform: uppercase
+
+  +at-breakpoint($tablet)
+    // Establish our new 8-column container.
+
+
+  +at-breakpoint($desktop)
+    // Establish our new 12-column container.
+
+
+section
+  &.one
+    +span-columns(12,12)
+    text-align: center
+    h1
+      +transform(rotate(-7.5deg))
+      font-size: 140px
+      font-family: 'din-blackitalic'
+      line-height: 9.5rem
+      background-color: $heading-color-firstpage
+      margin: 0
+      padding-bottom: 1rem
+      -webkit-background-clip: text
+      -moz-background-clip: text
+      background-clip: text
+      color: transparent
+      text-shadow: rgba(255,255,255,0.6) 0px 3px 10px
+
+
 
 
