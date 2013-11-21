@@ -1,13 +1,14 @@
 .page
-  @include container
+  height: 100%
+  // @include container
 
-  +at-breakpoint($tablet)
-    // Establish our new 8-column container.
-    +container
+  // +at-breakpoint($tablet)
+  //   // Establish our new 8-column container.
+  //   +container
 
-  +at-breakpoint($desktop)
-    // Establish our new 12-column container.
-    +container
+  // +at-breakpoint($desktop)
+  //   // Establish our new 12-column container.
+  //   +container
 
 
 
@@ -66,23 +67,43 @@
     // Establish our new 12-column container.
 
 
-section
-  &.one
-    +span-columns(12,12)
+article
+  background-attachment: fixed
+  z-index: 99
+  width: 100%
+  height: 100%
+  position: relative
+  // +span-columns(12,12)
+
+  .wrapper
+    @include container
     text-align: center
-    h1
-      +transform(rotate(-7.5deg))
-      font-size: 140px
-      font-family: 'din-blackitalic'
-      line-height: 9.5rem
-      background-color: $heading-color-firstpage
-      margin: 0
-      padding-bottom: 1rem
-      -webkit-background-clip: text
-      -moz-background-clip: text
-      background-clip: text
-      color: transparent
-      text-shadow: rgba(255,255,255,0.6) 0px 3px 10px
+
+    +at-breakpoint($tablet)
+      // Establish our new 8-column container.
+      +container
+
+    +at-breakpoint($desktop)
+      // Establish our new 12-column container.
+      +container
+
+  h1
+    +transform(rotate(-7.5deg))
+    font-size: 140px
+    font-family: 'din-blackitalic'
+    line-height: 9.5rem
+    background-color: $heading-color-firstpage
+    margin: 0
+    padding-bottom: 1rem
+    -webkit-background-clip: text
+    -moz-background-clip: text
+    background-clip: text
+    color: transparent
+    text-shadow: rgba(255,255,255,0.6) 0px 3px 10px
+
+  &.start
+    +background-size(cover)
+    background: url('../img/start.jpg') no-repeat center center fixed
 
 
 

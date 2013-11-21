@@ -12,6 +12,7 @@
     "font-awesome": "~4.0.3",
     "socialfeed": "~0.3.7",
     "classie": "~1.0.0",
-    "modernizr": "~2.6.2"
+    "modernizr": "~2.6.2",
+    "jquery.stellar": "~0.6.2"
   }
 }
