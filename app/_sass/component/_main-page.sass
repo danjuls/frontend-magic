@@ -115,41 +115,57 @@ article
     //text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(0,0,0,1) 0 1px, rgba(0,0,0,0.3) -1px -2px
 
   &.start
-    background: url('../img/bg-start.jpg')
+    background: url('../img/bg-start.jpg') no-repeat
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
     background-size: cover
 
   &.yoda
-    background: url('../img/bg-deathstar.jpg') center center fixed
+    background: url('../img/bg-deathstar.jpg')
+    // -webkit-background-size: cover
+    // -moz-background-size: cover
+    // -o-background-size: cover
+    // background-size: cover
+    height: 662px
 
     &.jedi
+
       section
-        opacity: 1
+        &.yoda-wrapper
+          opacity: 1
+        &.deathstar-wrapper
+          opacity: 1
+          -webkit-animation: move 5s
+          -moz-animation: move 5s
+          -o-animation: move 5s
+          animation:  move 5s
 
     section
-      +transition(opacity .5s ease-in-out)
-      width: 49%
-      opacity: 0
 
-
-      img
+      &.yoda-wrapper
+        +transition(opacity 1s ease-in-out)
         width: 49%
         position: absolute
         bottom: 0
         left: 0
-        -webkit-transition: opacity 1s ease-in-out
-        -moz-transition: opacity 1s ease-in-out
-        -o-transition: opacity 1s ease-in-out
-        transition: opacity 1s ease-in-out
-      // -webkit-background-size: cover
-      // -moz-background-size: cover
-      // -o-background-size: cover
-      // background-size: cover
+        opacity: 0
+
+        img
+          width: 100%
+
+      &.deathstar-wrapper
+        +transition(opacity .5s ease-in-out)
+        width: 20%
+        position: absolute
+        opacity: 0
+        right: 2%
+        top: 4%
+        img
+          width: 100%
 
   &.about
-    background: url('../img/bg-computer.jpg')
+    background: url('../img/bg-computer.jpg') center center
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
