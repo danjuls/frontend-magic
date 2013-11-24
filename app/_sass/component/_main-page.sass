@@ -87,16 +87,14 @@ article
   // +span-columns(12,12)
 
   .wrapper
-    @include container
+    +container
     text-align: center
     height: 100%
 
     +at-breakpoint($tablet)
-      // Establish our new 8-column container.
       +container
 
     +at-breakpoint($desktop)
-      // Establish our new 12-column container.
       +container
 
   h1
@@ -121,13 +119,17 @@ article
     -o-background-size: cover
     background-size: cover
 
-  &.yoda
+  &.slide.yoda
     background: url('../img/bg-deathstar.jpg')
     // -webkit-background-size: cover
     // -moz-background-size: cover
     // -o-background-size: cover
     // background-size: cover
-    height: 662px
+    height: 500px
+
+    h2
+      font-size: 4.500rem
+      color: #ffffff
 
     &.jedi
 
