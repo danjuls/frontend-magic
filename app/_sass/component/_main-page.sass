@@ -78,6 +78,11 @@
   text-align: center
   vertical-align: middle
 
+.large-text
+  font-size: 4.500rem
+  font-family: 'Source Sans Pro', sans-serif
+  line-height: 5rem
+
 article
   background-attachment: fixed
   z-index: 99
@@ -125,11 +130,31 @@ article
     // -moz-background-size: cover
     // -o-background-size: cover
     // background-size: cover
-    height: 500px
 
     h2
-      font-size: 4.500rem
+      @extend .large-text
       color: #ffffff
+
+    .star:nth-of-type(1)
+      position: absolute
+      bottom: 0
+      left: 2rem
+
+    .star:nth-of-type(2)
+      position: absolute
+      bottom: 2rem
+      left: 4rem
+
+    .star:nth-of-type(3)
+      position: absolute
+      bottom: 1rem
+      left: 4rem
+
+    .star:nth-of-type(4)
+      position: absolute
+      bottom: 1rem
+      right: 4rem
+
 
     &.jedi
 
@@ -138,10 +163,10 @@ article
           opacity: 1
         &.deathstar-wrapper
           opacity: 1
-          -webkit-animation: move 5s
-          -moz-animation: move 5s
-          -o-animation: move 5s
-          animation:  move 5s
+          -webkit-animation: move 5s ease
+          -moz-animation: move 5s ease
+          -o-animation: move 5s ease
+          animation:  move 5s ease
 
     section
 
@@ -167,11 +192,55 @@ article
           width: 100%
 
   &.about
-    background: url('../img/bg-computer.jpg') center center
+    background: url('../img/bg-computer.jpg') no-repeat
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
     background-size: cover
+
+    section
+
+    img
+      display: block
+      margin: 0 auto
+
+    .top
+      +span-columns(12,12)
+
+    .left
+      text-align: right
+      +span-columns(3,12)
+
+      img:first-of-type
+        margin-bottom: 5.6rem
+
+    .middle
+      +span-columns(6,12)
+
+      img:first-of-type
+        +border-radius(50%)
+        +box-shadow(0px 1px 9px 2px rgba(0, 0, 0, .6))
+        border: .3rem solid #ffffff
+        width: 14rem
+        margin-top: 3rem
+
+      img:last-of-type
+        display: none
+
+    .right
+      +span-columns(3 omega,12)
+      text-align: left
+
+      img:first-of-type
+        margin-bottom: 5.6rem
+
+    .text
+      +span-columns(12,12)
+
+      h2
+        @extend .large-text
+        color: #000
+        font-size: 3rem
 
   &.skills
     background: $skills-color-background url('../img/glow.png')
