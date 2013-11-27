@@ -1,0 +1,54 @@
+.about
+  // background: url('../img/bg-computer.jpg') no-repeat center center fixed
+  // -webkit-background-size: cover
+  // -moz-background-size: cover
+  // -o-background-size: cover
+  // background-size: cover
+  width: 100%
+  height: 100%
+
+  section
+
+  img
+    display: block
+    margin: 0 auto
+
+  .top
+    +span-columns(12,12)
+
+  .left
+    text-align: right
+    +span-columns(3,12)
+
+    img:first-of-type
+      margin-bottom: 5.6rem
+
+  .middle
+    +span-columns(6,12)
+
+    img:first-of-type
+      +border-radius(50%)
+      +box-shadow(0px 1px 9px 2px rgba(0, 0, 0, .6))
+      border: .3rem solid #ffffff
+      width: 14rem
+      margin-top: 3rem
+
+    img:last-of-type
+      display: none
+
+  .right
+    +span-columns(3 omega,12)
+    text-align: left
+
+    img:first-of-type
+      margin-bottom: 5.6rem
+
+  .text
+    +span-columns(12,12)
+
+    h2
+      @extend .large-text
+      color: #000
+      font-size: 4.5rem
+    p
+      font-size: 3.000rem

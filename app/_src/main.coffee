@@ -2,10 +2,15 @@ $ ->
   # (->
   #   new SocialFeed(el: $("#socialfeed")).addModule(new TwitterModule()).addModule(new InstagramModule('43653951')).start()
   # )()
+  skrollr.init
+    smoothScrolling: true
+    forceHeight: true
 
-  $.stellar()
-    # scrollProperty: 'transform',
-    # positionProperty: 'transform'
+  # maxWidth = $(window).width()
+  # maxHeight = $(window).height()
+  # $(".start, .yoda, .about, .skills, .social").css
+  #   width: maxWidth
+  #   height: maxHeight
 
   yoda = $(".yoda")
   # yoda.waypoint (direction) ->
