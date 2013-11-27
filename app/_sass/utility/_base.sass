@@ -12,7 +12,14 @@
   font-weight: normal
   font-style: normal
 
-$font-family: Arial, sans-serif
+@font-face
+  font-family: 'ptcaptionregular'
+  src: url('../fonts/ptserifcaption.eot')
+  src: url('../fonts/ptserifcaption.eot?#iefix') format('embedded-opentype'), url('../fonts/ptserifcaption.woff') format('woff'), url('../fonts/ptserifcaption.ttf') format('truetype'), url('../fonts/ptserifcaption.svg#pt_serif_captionregular') format('svg')
+  font-weight: normal
+  font-style: normal
+
+$font-family: 'ptcaptionregular'
 $font-family-big-heading: 'din-blackitalic'
 $font-family-text-heading: 'dinengschriftregular'
 
@@ -27,6 +34,10 @@ html, body
 
 a
   text-decoration: none
+
+p
+  font-size: inherit
+
 
 .container
   min-height: 100%

@@ -18,4 +18,4 @@ $ ->
   yoda.waypoint ((direction) ->
     $(this).toggleClass('jedi')
   ),
-    offset: 100
+    offset: 300
