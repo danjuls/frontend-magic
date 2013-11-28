@@ -5,10 +5,14 @@
   -o-background-size: cover
   background-size: cover
   top: 0
-  position: fixed
+  left: 0
+  bottom: 0
+  right: 0
+  margin: auto
+  position: absolute
   width: 100%
   height: 100%
-
+  overflow: hidden
 
 .about
   // background: url('../img/bg-computer.jpg') no-repeat center center fixed
@@ -16,12 +20,15 @@
   // -moz-background-size: cover
   // -o-background-size: cover
   // background-size: cover
-  position: absolute
-  right: 0
-  bottom: 0
+  top: 0
   left: 0
+  bottom: 0
+  right: 0
+  margin: auto
+  position: absolute
   width: 100%
   height: 100%
+  overflow: hidden
 
   section
 
@@ -32,10 +39,14 @@
   .top
     +span-columns(12,12)
 
+    img
+      width: 10%
+
   .left
     text-align: right
     +span-columns(3,12)
-
+    img
+      width: 30%
     img:first-of-type
       margin-bottom: 5.6rem
 
@@ -56,6 +67,9 @@
     +span-columns(3 omega,12)
     text-align: left
 
+    img
+      width: 30%
+
     img:first-of-type
       margin-bottom: 5.6rem
 
@@ -65,6 +79,8 @@
     h2
       @extend .large-text
       color: #000
-      font-size: 4.5rem
+      // font-size: 4.5rem
+      font-size: 1.5rem
     p
-      font-size: 3.000rem
+      // font-size: 3.000rem
+      font-size: 1.000rem
