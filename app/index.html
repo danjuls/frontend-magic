@@ -2,7 +2,8 @@
 layout: default
 title: danjuls - Daniel Andreasson
 ---
-<article id="slide1" class="slide start">
+<div id="skrollr-body">
+ <article id="slide1" class="slide start" data-0="opacity:1;top:0px;display[begin]:block;" data-900="opacity:0;top:-100%;display[end]:none;">
     <div class="wrapper">
         <div class="title">
             <span>
@@ -10,10 +11,16 @@ title: danjuls - Daniel Andreasson
                 <p>{{ site.author.name }}</p>
             </span>
         </div>
-        <h1>Hi, im danjuls...</h1>
+        <img src="img/welcome-text.png" />
     </div>
 </article>
-<article id="slide2" class="slide about">
+<section class="start-bg" data-0="opacity:1;top:0px;display[begin]:block;" data-900="opacity:0;top:0;display[end]:none;">
+    <div class="scrolldown" data-0="bottom:10%;" data-900="bottom:-10%;"></div>
+</section>
+</div>
+<section class="about-bg" data-600="top:0px;display[begin]:block;" data-1200="opacity:1;top:0px;display[end]:block;">
+</section>
+<article id="slide2" class="slide about" data-900="top:900px;left:0px;display[begin]:block;" data-1200="opacity:1;top:1200px;left:0;display[end]:block;">
     <div class="wrapper">
         <section class="top">
             <img src="img/grunt.png" alt="logo of grunt js" />
@@ -35,8 +42,8 @@ title: danjuls - Daniel Andreasson
             <p>I'm a frontend developer at Webbhuset. Loves responsive frontendwork. Active as board member of Drupal Gothenburg.</p>
         </section>
     </div>
-</article><!--
-<article id="slide3" class="slide yoda">
+</article>
+<!-- <article id="slide3" class="slide yoda">
     <div class="wrapper">
 
                 <h2>If no mistake have you made, yet losing you are ... a different game you should play - Yoda</h2>
@@ -78,10 +85,8 @@ title: danjuls - Daniel Andreasson
     </div>
 </article> -->
 
-<section class="start-bg" data-0="opacity:1;top:0px;" data-600="opacity:0;top:-300px;display[end]:none;">
-</section>
-<section class="about-bg" data-0="opacity:1;top:0px;display[begin]:block;" data-600="opacity:0;top:-600px%;display[end]:none;">
-</section>
+
+
 <!-- <section class="skills-bg">
 </section>
 <section class="social-bg">
