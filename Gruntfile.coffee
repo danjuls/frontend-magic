@@ -292,8 +292,8 @@ module.exports = (grunt) ->
     jshint:
       options:
         jshintrc: ".jshintrc"
-
-      all: ["Gruntfile.js", "<%= yeoman.app %>/js/**/*.js", "test/spec/**/*.js", "!<%= yeoman.app %>/js/vendor/**/*"]
+      # "test/spec/**/*.js",
+      all: ["Gruntfile.js", "<%= yeoman.app %>/js/**/*.js", "!<%= yeoman.app %>/js/vendor/**/*"]
 
     csscss:
       options:

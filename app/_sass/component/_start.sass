@@ -1,12 +1,45 @@
 .start
-  z-index: 201
+  z-index: 1000
   position: absolute
   margin: auto
-  height: 90%
+  height: 100%
   top: 0
   left: 0
   bottom: 0
   right: 0
+
+  .title
+    +border-radius(50%)
+    margin-top: 100px
+    background-color: #000000
+    width: px-to-rem(200)
+    height: px-to-rem(200)
+    color: #ffffff
+    text-align: center
+    display: table
+    margin: 0 auto
+    span
+      display: table-cell
+      vertical-align: middle
+
+    h2
+      font-size: px-to-rem(20)
+      margin: 0
+      padding: 0
+
+    p
+      margin: .5rem 0
+
+    a
+      color: #ffffff
+      text-transform: uppercase
+
+    +at-breakpoint($tablet)
+      // Establish our new 8-column container.
+
+
+    +at-breakpoint($desktop)
+      // Establish our new 12-column container.
 
 .start-bg
   background: url('../img/bg-start.jpg') no-repeat center center fixed
@@ -18,7 +51,7 @@
   height: 100%
   position: fixed
   top: 0
-  z-index: 200
+  z-index: 999
 
   .scrolldown
     background: url('../img/scrolldown.png')
@@ -29,3 +62,14 @@
     left: 50%
     margin-left: -27px
     z-index: 300
+
+  .start-welcome
+    background: url('../img/welcome-text.png') no-repeat 50% 50%
+    z-index: 1000
+    position: absolute
+    margin: auto
+    height: 100%
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0

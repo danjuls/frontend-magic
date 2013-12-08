@@ -12,6 +12,13 @@ $ ->
   #   width: maxWidth
   #   height: maxHeight
 
+  $(".map").gMap
+    zoom: 15
+    markers: [
+      latitude: 57.703244
+      longitude: 12.284946
+    ]
+
   yoda = $(".yoda")
   # yoda.waypoint (direction) ->
   #   context: '.start'
