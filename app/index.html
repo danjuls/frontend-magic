@@ -15,7 +15,7 @@ title: danjuls - Daniel Andreasson
         </div>
     </article>
     <section class="start-bg" data-0="opacity:1;display[begin]:block;" data-1000="opacity:0;display[end]:none;">
-        <div class="start-welcome" data-0="opacity:1;top:0px;display[begin]:block;" data-1000="opacity:0;top:-100%;display[end]:none;"></div>
+        <div class="start-welcome" data-0="opacity:1;top:0px;display[begin]:block;transform:translate(0%, 0%);" data-1000="opacity:0;transform:translate(0%, -100%);display[end]:none;"></div>
         <div class="scrolldown" data-0="bottom:10%;" data-1000="bottom:-10%;"></div>
     </section>
     <section class="about-bg" data-900="width:100%;display[begin]:block;" data-2000="width:100%;display[begin]:block;" data-2800="width:0%;display[end]:block;">
@@ -46,17 +46,18 @@ title: danjuls - Daniel Andreasson
     <section class="beginning-bg" data-0="opacity:0;" data-2600="opacity:1;width:100%;display[begin]:block;" data-2800="width:100%;display[end]:block;">
     </section>
     <article id="slide3" class="slide beginning" data-2600="opacity:1;width:100%;display[begin]:block;" data-2800="width:100%;display[end]:block;">
-        <img src="img/beginning-title.png" class="beginning-title" alt="image with title for beginning" data-2800="opacity:0;display[begin]block;" data-3200="opacity:1;transform:translate(-50%, -50%)" data-4100="dipsplay[end]block;transform:translate(-200%, -50%)" />
+        <img src="img/beginning-title.png" class="beginning-title" alt="image with title for beginning" data-2800="opacity:0;display[begin]block;" data-3200="opacity:1;transform:translate(-50%, -50%)" data-3800="opacity:1;transform:translate(-50%, -50%)" data-4100="dipsplay[end]block;transform:translate(-200%, -50%)" />
         <div class="wrapper">
             <section>
                 <span class="line" data-2800="left:-110%;" data-3200="left:15%;"></span>
-                <!-- <img src="img/young-daniel.jpg" alt="picture of young Daniel" class="img-responsive" /> -->
                 <span class="line" data-2800="right:-110%;left:auto;" data-3200="right:15%;"></span>
             </section>
-            <section>
+            <section data-3800="dipsplay[start]block;transform:translate(+200%, -50%)" data-4300="dipsplay[end]block;transform:translate(-50%, -50%)">
                 <h2>Yes that is me with the crazy stare!</h2>
                 <p>Raised in a town outside of Gothenburg, Sweden. I developed an deep facination for Commodore 64 and Star Wars during my younger years. </p>
             </section>
+
+            <img src="img/young-daniel.jpg" alt="picture of young Daniel" class="young-daniel" data-4300="dipsplay[start]block;transform:translate(-200%, -50%)" data-4800="z-index:-1;" data-5800="dipsplay[end]block;transform:translate(+200%, -50%)" />
 
         </div>
     </article>
