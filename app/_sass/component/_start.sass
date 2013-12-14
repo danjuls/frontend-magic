@@ -1,15 +1,21 @@
 .start
+  +stretch()
   z-index: 1000
-  position: absolute
   margin: auto
   height: 100%
-  top: 0
-  left: 0
-  bottom: 0
-  right: 0
 
+.title-wrapper
+  width: 10rem
+  height: 10rem
+  z-index: 2000
+  position: absolute
+  left: 50%
+  margin-left: -5rem
   .title
     +border-radius(50%)
+    +opacity(1)
+    +transition(all 1s ease-in-out)
+
     background-color: #000000
     width: 10rem
     height: 10rem
@@ -17,7 +23,9 @@
     text-align: center
     display: table
     margin: 0 auto
-    margin-top: 3%
+    position: absolute
+    left: 50%
+    margin-left: -5rem
     span
       display: table-cell
       vertical-align: middle
