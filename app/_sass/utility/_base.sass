@@ -19,11 +19,21 @@
   font-weight: normal
   font-style: normal
 
+@font-face
+  font-family: 'c64_userregular'
+  src: url('../fonts/c64-webfont.eot')
+  src: url('../fonts/c64-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/c64-webfont.woff') format('woff'), url('../fonts/c64-webfont.ttf') format('truetype'), url('../fonts/c64-webfont.svg#c64_userregular') format('svg')
+  font-weight: normal
+  font-style: normal
+
 $font-family: 'ptcaptionregular'
 $font-family-big-heading: 'din-blackitalic'
 $font-family-text-heading: 'dinengschriftregular'
 
 $font-size: 16px
+
+*
+  @include box-sizing(border-box)
 
 // Styling
 html, body

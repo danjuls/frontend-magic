@@ -1,28 +1,116 @@
 .computer-bg
   +background-size(cover)
-  +stretch()
+  +box-shadow(0px -3px 5px rgba(0, 0, 0, 0.75))
   background: url('../img/bg-transformer.jpg') no-repeat center center fixed
   margin: auto
   width: 100%
   height: 100%
   display: none
   z-index: 900
-  @include box-shadow(0px -3px 5px rgba(0, 0, 0, 0.75))
+
+.star
+  position: absolute
+  bottom: -2%
+  left: 5%
+  // animation: move-star 5s ease
+
+$numbers: one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen
+$percentage: 5%
+
+=star-magic
+  @each $number in $numbers
+    .star-#{$number}
+      @extend .star
+      left: $percentage
+      $percentage: $percentage +5%
 
 .computer
-  +stretch()
-  width: 100%
-  height: 100%
-  z-index: 900
+  +star-magic
+  position: relative
+  overflow: hidden
+
 
   .computer-title
+    +transform(translate(-50%, -50%))
+    position: absolute
+    width: 60%
+    left: 50%
+    top: 10%
+
+  .c64-image
+    +transform(translate(-50%, -50%))
+    width: 40%
     position: absolute
     left: 50%
     top: 50%
-    width: 90%
 
-    -webkit-transform: translate(-50%, -50%)
-    -moz-transform: translate(-50%, -50%)
-    -ms-transform: translate(-50%, -50%)
-    -o-transform: translate(-50%, -50%)
-    transform: translate(-50%, -50%)
+  .term-wrapper
+    +opacity(0)
+
+
+  +at-breakpoint($tablet)
+
+    &.magic
+      .c64-image
+        +opacity(0)
+
+      .term-wrapper
+        +opacity(1)
+    .computer-title
+
+    .c64-image
+      +transform(translate(-50%, -50%))
+      +transition(opacity 2s ease-in-out)
+
+      width: 40%
+      position: absolute
+      left: 50%
+      top: 50%
+
+    .term-wrapper
+      +transition(opacity 2s ease-in-out)
+      +transform(translate(-50%, -50%))
+      background-color: #9C9CFF
+      position: absolute
+      left: 50%
+      top: 50%
+      padding: 2rem
+
+    .term
+      text-align: left
+      font-family: c64_userregular
+
+    .terminal
+      background-color: #3939DE
+      color: #9C9CFF
+      font-size: 1rem
+      font-weight: bold
+      padding: 0
+
+    .terminal .cmd span.inverted
+      background-color: #9C9CFF
+      color: #3939DE
+
+    .terminal-output
+      padding-top: 1rem
+
+    .terminal-output > div
+      padding-top: 0
+
+    .terminal-output > div
+      line-height: 1rem
+
+    .terminal-output > div > div
+      // margin-bottom: -3px
+      line-height: 1rem
+      height: 1rem
+
+    .cmd
+      height: 1em
+
+    .cmd span
+      margin-top: -3px
+
+
+  +at-breakpoint($desktop)
+

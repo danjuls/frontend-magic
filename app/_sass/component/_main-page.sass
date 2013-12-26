@@ -1,15 +1,15 @@
 .page
   height: 100%
-  // @include container
+  width: 100%
 
-  // +at-breakpoint($tablet)
-  //   // Establish our new 8-column container.
-  //   +container
+.wrapper
+  +container
+  height: 100%
+  +at-breakpoint($tablet)
+    +container
 
-  // +at-breakpoint($desktop)
-  //   // Establish our new 12-column container.
-  //   +container
-
+  +at-breakpoint($desktop)
+    +container
 .centered
   top: 0
   bottom: 0
@@ -67,16 +67,16 @@
 
 article
   .wrapper
-    +container
+
     text-align: center
     height: 100%
     position: relative
 
     +at-breakpoint($tablet)
-      +container
+      // +container
 
     +at-breakpoint($desktop)
-      +container
+      // +container
 
   h1
     +transform(rotate(-7.5deg))
@@ -141,6 +141,53 @@ h2
     z-index: 99999
     position: absolute
     @include border-radius(50%)
+
+section
+  color: #444
+  height: 500px
+  float: left
+  width: 100%
+
+section h1
+  font-size: 2em
+  font-weight: bold
+  position: relative
+  text-align: center
+  top: 225px
+
+
+
+section#s1
+  +background-size(cover)
+  background-image: url('../img/bg-start.jpg')
+
+section#s2
+  +background-size(cover)
+  background-image: url('../img/bg-computer.jpg')
+
+
+section#s3
+  background-image: url('../img/bg-beginning.jpg')
+
+section#s3 p
+  left: 300px
+
+
+section#s4
+  +background-size(cover)
+  background-image: url('../img/bg-transformer.jpg')
+  color: #ddd
+
+section#s4 p
+  left: 400px
+
+/* Background Image from http://www.flickr.com/photos/matthewjuran/5523217723/ */
+section#s5
+  background-image: url("./5523217723_b978d3c401_o.jpg")
+  color: #fdb
+
+section#s5 p
+  left: 500px
 
 // .skrollable
 //   position: fixed
