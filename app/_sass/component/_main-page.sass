@@ -1,6 +1,8 @@
 .page
   height: 100%
   width: 100%
+  // overflow: auto
+  -webkit-overflow-scrolling: touch
 
 .wrapper
   +container
@@ -51,10 +53,10 @@
   width: 100%
   height: 100%
 
-.magic
-  display: table-cell
-  text-align: center
-  vertical-align: middle
+// .magic
+//   display: table-cell
+//   text-align: center
+//   vertical-align: middle
 
 .large-text
   font-size: 4.500rem
@@ -143,6 +145,7 @@ h2
     @include border-radius(50%)
 
 section
+  +translate3d(0, 0, 0)
   color: #444
   height: 500px
   float: left
@@ -159,32 +162,37 @@ section h1
 
 section#s1
   +background-size(cover)
+  +transition(transform 1s ease-in-out)
   background-image: url('../img/bg-start.jpg')
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 9999
+
+  &.magic
+    +transform(translateY(-100%))
 
 section#s2
   +background-size(cover)
-  background-image: url('../img/bg-computer.jpg')
+  background-image: url('../img/bg-computer-big.jpg')
 
 
 section#s3
-  background-image: url('../img/bg-beginning.jpg')
-
-section#s3 p
-  left: 300px
-
+  +background-size(cover)
+  // background-image: url('../img/bg-beginning.jpg')
+  // background-image: url('../img/bg-transformer.jpg')
+  background-image: url('../img/bg-thedig.jpg')
 
 section#s4
   +background-size(cover)
-  background-image: url('../img/bg-transformer.jpg')
-  color: #ddd
+  background-image: url('../img/bg-c64.jpg')
 
-section#s4 p
-  left: 400px
-
-/* Background Image from http://www.flickr.com/photos/matthewjuran/5523217723/ */
 section#s5
-  background-image: url("./5523217723_b978d3c401_o.jpg")
-  color: #fdb
+  +background-size(cover)
+  background-image: url('../img/bg-transformer.jpg')
+
 
 section#s5 p
   left: 500px

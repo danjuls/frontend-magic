@@ -1,6 +1,6 @@
 /**
  * Parallax Scroller
- * 
+ *
  * @uses jQuery 1.5
  * @author Doug Hurst <doug@echoeastcreative.com>
  */
@@ -21,7 +21,7 @@ ParallaxScroller.prototype.viewport_height = 0;
 
 /**
  * Get Background Image Height
- * 
+ *
  * @param string an image URL
  * @return int
  */
@@ -36,23 +36,24 @@ ParallaxScroller.prototype.getBackgroundImageHeight = function(url) {
 
 /**
  * Sets a layer to be scrolled in parallax with other layers
- * 
+ *
  * @param string layer_selector CSS Selector for designated segments of the layer
  * @param float speed Multiplier for speed & direction
  * @param string type One of 'background' or 'element'
  * @return this Provides fluent interface
  */
 ParallaxScroller.prototype.addLayer = function(layer_selector, speed, type) {
-	var segments = [];
-	if(typeof(type) === 'undefined') type = 'element';
+  var segments = [];
+  if(typeof(type) === 'undefined') type = 'element';
 
-	//  Add segments to array
-	$(layer_selector).each(function(index) {
-		var self = $(this);
+  //  Add segments to array
+  $(layer_selector).each(function(index) {
+    var self = $(this);
 
-		//  Handle background segments
-		//  These will be in parallax by background-position offset
-		//  NOTE: If set, the x-value of the background position *must* be in pixels
+    //  Handle background segments
+    //  These will be in parallax by background-position offset
+    //  NOTE: If set, the x-value of the background position *must* be in pixels
+
 		if(type == 'background' && self.css('background-image') != 'none') {
 			var container = self;
 
@@ -106,7 +107,7 @@ ParallaxScroller.prototype.addLayer = function(layer_selector, speed, type) {
 
 /**
  * Parallax Event Handler
- * 
+ *
  * @param event The scroll event
  */
 ParallaxScroller.prototype.parallax = function(event) {

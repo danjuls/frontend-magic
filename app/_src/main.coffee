@@ -8,14 +8,14 @@ $ ->
 
   parallaxer = new ParallaxScroller()
   parallaxer
-    .addLayer("body section", 0.5, "background")
-    .addLayer("body section h1", -1.25, "element")
-    .addLayer("body section .wrapper.start-lax", -1.25, "element")
-    .addLayer("body section .wrapper.about-lax", -0.25, "element")
-    .addLayer("body section.beginning", 0, "element")
-    .addLayer("body section.computer .one", -1.25, "element")
-    .addLayer("body section.computer .two", -0.5, "element")
-    .addLayer("body section.computer .three", -1, "element")
+    .addLayer("body section.bg", 0.3, "background")
+    # .addLayer("body section h1", -1.25, "element")
+    .addLayer("body .flylax", 0, "element")
+    # .addLayer("body section .wrapper.about-lax", -0.25, "element")
+    # .addLayer("body section.beginning", -3, "element")
+    .addLayer("body section .one", -1.25, "element")
+    .addLayer("body section .two", -0.5, "element")
+    .addLayer("body section .three", -1, "element")
     .addLayer("body section .computer-title", -1, "element")
     .addLayer("body section .c64-image", -1, "element")
 
@@ -34,7 +34,14 @@ $ ->
   #     longitude: 12.284946
   #   ]
 
+  listResponse =
+    '<span class="tr"><span class="td">0 "DANIELS FUNHOUSE" 13 2A</span></span>\n
+    <span class="tr"><span class="td">102</span><span class="td">"BLUE MAX 2001"</span><span class="td">PRG</span></span>\n
+    <span class="tr"><span class="td">0</span><span class="td">"----------------"</span><span class="td">DEL</span></span>
+    '
+
   run = 0
+  list = 0
   $(".term").terminal ((cmd, trm) ->
     console.log(cmd)
     if (cmd is "LOAD")
@@ -44,9 +51,9 @@ $ ->
       ), 5000
       # Activate loading screen
 
-    else if(cmd is 'LOAD"ENTER THE DRAGON",8')
+    else if(cmd is 'LOAD"*",8' || cmd is 'LOAD "*",8')
       run = 1
-      trm.echo 'SEARCHING FOR ENTER THE DRAGON'
+      trm.echo 'SEARCHING FOR *'
       setTimeout (->
         trm.echo 'LOADING'
       ), 1000
@@ -54,14 +61,29 @@ $ ->
         trm.echo 'READY'
       ), 3000
 
-    else if(cmd is 'RUN')
-      if (run == 1)
-        console.log('apa')
+    else if(cmd is 'LOAD"$",8' || cmd is 'LOAD "$",8')
+      list = 1
+      trm.echo 'SEARCHING FOR $'
+      setTimeout (->
+        trm.echo 'LOADING'
+      ), 1000
+      setTimeout (->
+        trm.echo 'READY'
+      ), 3000
+
+    else if(cmd is 'LIST' && list == 1)
+      trm.listEcho listResponse
+      list = 0
+
+    else if(cmd is 'RUN' && run == 1)
       # Activate loading screen
 
-    else
-      trm.echo 'SYNTAX ERROR'
+      console.log('apa')
+      run = 0
 
+    else
+      trm.echo '?SYNTAX ERROR'
+      trm.echo 'READY'
   ),
   prompt: ""
   greetings: "     **** COMMODORE 64 BASIC V2 ****\n\n" + " 64K RAM SYSTEM   38911 BASIC BYTES FREE\n\nREADY."
@@ -72,7 +94,7 @@ $ ->
 
   width: 570
   height: 390
-
+  start = $(".start")
   computer = $(".computer")
   # yoda.waypoint (direction) ->
   #   context: '.start'
@@ -81,6 +103,10 @@ $ ->
   #   console.log('hit')
   #   $(this).toggleClass('jedi')
   #   # alert('hit')
+  start.waypoint ((direction) ->
+    $(this).toggleClass('magic')
+  ),
+    offset: -50
   computer.waypoint ((direction) ->
     $(this).toggleClass('magic')
   ),

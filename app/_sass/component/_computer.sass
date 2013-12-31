@@ -23,12 +23,15 @@ $percentage: 5%
       @extend .star
       left: $percentage
       $percentage: $percentage +5%
-
-.computer
+#s4
   +star-magic
   position: relative
   overflow: hidden
 
+
+.computer
+  .wrapper
+    position: relative
 
   .computer-title
     +transform(translate(-50%, -50%))
@@ -73,7 +76,7 @@ $percentage: 5%
       background-color: #9C9CFF
       position: absolute
       left: 50%
-      top: 50%
+      top: 55%
       padding: 2rem
 
     .term

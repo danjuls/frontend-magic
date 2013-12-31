@@ -1855,6 +1855,31 @@
             scroll_to_bottom();
             return div;
         }
+        // Danjuls addded this
+        function draw_line_list(string) {
+            string = typeof string === 'string' ? string : String(string);
+            var div, i, len;
+            // if (string.length > num_chars) {
+                // string can have line break
+                var array = string.split('\n');
+                // TODO: the way it should work
+                // var array = $.terminal.split_equal(string, num_chars);
+                for (i = 0, len = array.length; i < len; ++i) {
+                    if (array[i] === '' || array[i] === '\r') {
+                        div.append('<div>&nbsp;</div>');
+                    } else {
+                        div = $('<div class="table"></div>');
+                        $(div).append(array[i]);
+                        output.append(div);
+                        div.width('100%');
+                    }
+                }
+            // } else {
+            //     div = $('<div/>').html($.terminal.format(string));
+            // }
+            scroll_to_bottom();
+            return div;
+        }
 
         function show_greetings() {
             if (options.greetings === undefined) {
@@ -2117,6 +2142,13 @@
             echo: function(line) {
                 lines.push(line);
                 draw_line(typeof line === 'function' ? line() : line);
+                on_scrollbar_show_resize();
+                return self;
+            },
+            // danjuls added this
+            listEcho: function(line) {
+                lines.push(line);
+                draw_line_list(typeof line === 'function' ? line() : line);
                 on_scrollbar_show_resize();
                 return self;
             },

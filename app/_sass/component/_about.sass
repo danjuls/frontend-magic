@@ -10,163 +10,110 @@
 
 .about
   +box-shadow(0px -1px 3px rgba(0, 0, 0, 0.15))
+  padding: 2rem 0
   position: relative
+  // background-color: #c4e1bd
+  background: #c4e1bd url('../img/glow.png') center center
+  display: inline-block
+  // height: 512px
+  width: 100%
 
   img
     display: block
     margin: 0 auto
 
-  .top
-    position: relative
-    height: 10%
+  // .top
+  //   position: relative
+  //   height: 10%
 
-    img
-      position: absolute
-      left: 45%
-      top: 30%
+  //   img
+  //     position: absolute
+  //     left: 45%
+  //     top: 30%
 
+  // .left
+  //   text-align: right
+  //   position: relative
+  //   height: 40%
+
+  //   img
+
+
+  //   img:first-of-type
+  //     position: absolute
+
+
+  //   img:last-of-type
+  //     position: absolute
+  //     bottom: 0
+
+
+  // .middle
+  //   position: relative
+  //   min-height: 40%
+  //   max-height: 50%
   .left
-    text-align: right
+    +span-columns(3, 12)
     position: relative
-    height: 40%
-
-    img
-
-
-    img:first-of-type
-      position: absolute
-
-
-    img:last-of-type
-      position: absolute
-      bottom: 0
-
-
-  .middle
-    position: relative
-    min-height: 40%
-    max-height: 50%
 
     img:first-of-type
       +border-radius(50%)
       +box-shadow(0px 1px 9px 2px rgba(0, 0, 0, .6))
       border: .3rem solid #ffffff
-      width: 40%
-      position: absolute
-      margin: auto
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
+      width: 100%
 
-    img:last-of-type
+
+    img:nth-of-type(2)
       display: none
 
-  .right
-    +span-columns(3 omega,12)
-    position: relative
-    text-align: left
-    height: 40%
+    img:nth-of-type(4)
+      width: 13%
 
-    img
-
-
-    img:first-of-type
-      // margin-bottom: 5.6rem
-      position: absolute
-
+    img:nth-of-type(6)
+      width: 13%
 
     img:last-of-type
-      position: absolute
-      bottom: 0
+      margin-right: 0
 
+    .skill-wrapper
+
+    .skill
+      display: inline-block
+      width: 15%
+      // float: left
+      vertical-align: middle
+      margin-right: .7rem
+      padding-top: 1rem
+
+  .right
+    +span-columns(9 omega, 12)
+    position: relative
+    text-align: left
 
   .text
     text-align: center
     h2
       @extend .large-text
       color: #000
-      font-size: 4.5vw
+      font-size: 4.2vw
       margin-bottom: 0
       margin-top: .5rem
     p
 
-      font-size: 2.8vw
+      font-size: 2vw
       margin: .5rem
 
   +at-breakpoint($tablet)
-    // Establish our new 8-column container.
+    .left
+      +span-columns(3,12)
 
-
+    .right
+      +span-columns(9 omega, 12)
   +at-breakpoint($desktop)
-    .text
-      +span-columns(12,12)
-
-    .top
-      +span-columns(12,12)
-      position: relative
-      height: 10%
-
-      img
-        width: 10%
-        left: 45%
-        top: 15%
 
     .left
       +span-columns(3,12)
-      text-align: right
-      height: 40%
 
-      img
-        width: 30%
-
-      img:first-of-type
-        // margin-bottom: 5.6rem
-
-        top: 20%
-
-      img:last-of-type
-
-        bottom: 0
-        width: 35%
-
-    .middle
-      +span-columns(6,12)
-      height: 40%
-      margin-top: 4%
-      position: relative
-
-
-      img:first-of-type
-        +border-radius(50%)
-        +box-shadow(0px 1px 9px 2px rgba(0, 0, 0, .6))
-        border: .3rem solid #ffffff
-        width: 40%
-        margin: auto
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-
-      img:last-of-type
-        display: none
 
     .right
-      +span-columns(3 omega,12)
-      text-align: left
-      height: 40%
-
-      img
-        width: 30%
-
-      img:first-of-type
-        // margin-bottom: 5.6rem
-        position: absolute
-        top: 20%
-
-      img:last-of-type
-        position: absolute
-        bottom: 0
-        width: 35%
-
-
+      +span-columns(9 omega, 12)

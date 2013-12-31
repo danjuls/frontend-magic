@@ -10,8 +10,13 @@
 
 .beginning
   +box-shadow(0px -1px 3px rgba(0, 0, 0, 0.15))
-
+  +background-image(url('../img/bg-beginning.jpg'))
+  +background-size(cover)
+  // background: url('../img/bg-beginning.jpg') no-repeat center center fixed
   max-height: 450px
+  display: inline-block
+  width: 100%
+
   .left
     +span-columns(12,12)
 
@@ -29,7 +34,7 @@
     padding-left: .5rem
     margin-top: 1rem
   p
-    font-size: 2.8vw
+    font-size: 2.4vw
     margin: .5rem
     // text-align: left
 
