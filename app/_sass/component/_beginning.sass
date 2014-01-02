@@ -9,13 +9,15 @@
   z-index: 800
 
 .beginning
-  +box-shadow(0px -1px 3px rgba(0, 0, 0, 0.15))
+  +box-shadow(0px -2px 3px rgba(0, 0, 0, 0.15),0px 2px 3px 0px rgba(0, 0, 0, 0.15))
   +background-image(url('../img/bg-beginning.jpg'))
   +background-size(cover)
-  // background: url('../img/bg-beginning.jpg') no-repeat center center fixed
+  +pie-clearfix
+
   max-height: 450px
-  display: inline-block
   width: 100%
+  float: left
+  z-index: 9999
 
   .left
     +span-columns(12,12)
@@ -45,7 +47,7 @@
   +at-breakpoint($tablet)
     .left
       +span-columns(4,12)
-      padding-top: 2rem
+      padding: 2rem 0
 
     .right
       +span-columns(8 omega, 12)

@@ -16,8 +16,8 @@ $ ->
     .addLayer("body section .one", -1.25, "element")
     .addLayer("body section .two", -0.5, "element")
     .addLayer("body section .three", -1, "element")
-    .addLayer("body section .computer-title", -1, "element")
-    .addLayer("body section .c64-image", -1, "element")
+    # .addLayer("body section .computer-title", -2.25, "element")
+    # .addLayer("body section .c64-image", -2.25, "element")
 
     # .addLayer "body section p", -2.5, "element"
 
@@ -93,7 +93,7 @@ $ ->
 
 
   width: 570
-  height: 390
+  height: 300
   start = $(".start")
   computer = $(".computer")
   # yoda.waypoint (direction) ->
@@ -110,4 +110,4 @@ $ ->
   computer.waypoint ((direction) ->
     $(this).toggleClass('magic')
   ),
-    offset: 50
+    offset: '50%'
