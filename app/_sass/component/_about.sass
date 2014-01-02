@@ -59,6 +59,46 @@
     position: relative
     text-align: left
 
+    .connect
+      +center(4, 9)
+      margin-top: 2rem
+      padding: 0
+      list-style: none
+
+      li
+        display: inline-block
+        margin-bottom: -3px
+
+        a
+          display: block
+          float: left
+          line-height: 90%
+          font-family: 'pictonic'
+          font-size: 2rem
+          padding: .2em .2em .15em .2em
+          background: #eeeeee
+          background-color: rgba(0, 0, 0, 0.1)
+          color: #222
+          &:hover
+            background-color: #000
+            color: #fff
+          &.drupal:hover
+            background-color: #29a8e0
+          &.facebook:hover
+            background-color: #3c5fac
+          &.twitter:hover
+            background-color: #5ec3df
+          &.linkedin:hover
+            background-color: #2089b5
+          &.google:hover
+            background-color: #c63d2d
+          &.github:hover
+            background-color: #000
+          &.skype:hover
+            background-color: #00aff0
+          &.tumblr:hover
+            background-color: #2C4762
+
   .text
     text-align: center
     h2
