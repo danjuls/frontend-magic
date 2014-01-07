@@ -110,4 +110,4 @@ $ ->
   computer.waypoint ((direction) ->
     $(this).toggleClass('magic')
   ),
-    offset: '50%'
+    offset: '45%'

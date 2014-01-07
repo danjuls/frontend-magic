@@ -33,13 +33,30 @@ $percentage: 5%
   +box-shadow(0px -2px 3px rgba(0, 0, 0, 0.15),0px 2px 3px 0px rgba(0, 0, 0, 0.15))
   padding: 2rem 0
   position: relative
-  background: #c4e1bd url('../img/glow.png') center center
   float: left
   width: 100%
   z-index: 9999
 
   .wrapper
-    position: relative
+
+
+  .first
+    background: #c4e1bd url('../img/glow.png') center center
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 300
+
+  .second
+    background: #e1e1e1 url('../img/glow.png') center center
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 200
 
   .computer-title
     width: 60%
@@ -47,24 +64,34 @@ $percentage: 5%
   .c64-image
     width: 40%
 
-  .term-wrapper
-    +opacity(0)
+  // .term-wrapper
+  //   +opacity(0)
 
 
   +at-breakpoint($tablet)
     +pie-clearfix
-    height: 25rem
+    height: 30rem
+
     &.magic
-      .c64-image
-        +opacity(0)
+
+      .first
+        -webkit-animation: bounceOutDown 5s ease
+        -moz-animation: bounceOutDown 5s ease
+        -o-animation: bounceOutDown 5s ease
+        animation: bounceOutDown 5s ease
+        -webkit-animation-fill-mode: forwards
+        -moz-animation-fill-mode: forwards
+        -o-animation-fill-mode: forwards
+        -ms-animation-fill-mode: forwards
+        animation-fill-mode: forwards
 
       .term-wrapper
-        +opacity(1)
+        // +opacity(1)
 
     .computer-title
       +transform(translate(-50%, -50%))
       position: absolute
-      top: 5%
+      top: 10%
       left: 50%
 
     .c64-image
@@ -122,4 +149,5 @@ $percentage: 5%
 
 
   +at-breakpoint($desktop)
+
 

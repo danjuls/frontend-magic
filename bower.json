@@ -16,6 +16,7 @@
     "jquery.stellar": "~0.6.2",
     "jquery-waypoints": "~2.0.3",
     "skrollr-stylesheets": "~0.0.4",
-    "jquery.gmap": "~3.3.3"
+    "jquery.gmap": "~3.3.3",
+    "animate.css": "~3.0.0"
   }
 }
