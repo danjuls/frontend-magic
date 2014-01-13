@@ -96,6 +96,7 @@ $ ->
   height: 300
   start = $(".start")
   computer = $(".computer")
+  starWars = $('#s5')
   # yoda.waypoint (direction) ->
   #   context: '.start'
   #   offset: 4000px
@@ -111,3 +112,8 @@ $ ->
     $(this).toggleClass('magic')
   ),
     offset: '45%'
+
+  starWars.waypoint ((direction) ->
+    $(this).toggleClass('jedi')
+  ),
+    offset: '20%'

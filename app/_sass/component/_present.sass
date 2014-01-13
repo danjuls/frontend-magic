@@ -1,0 +1,152 @@
+.present
+  +box-shadow(0px -2px 3px rgba(0, 0, 0, 0.15),0px 2px 3px 0px rgba(0, 0, 0, 0.15))
+  background: $color-of-the-year url('../img/glow.png') center center
+  +background-size(cover)
+  +pie-clearfix
+  max-height: 450px
+  width: 100%
+  float: left
+  z-index: 9999
+  text-align: center
+  padding: 1rem 0
+
+  h2
+    @extend .large-text
+    color: #000
+    font-size: 4.2vw
+    margin-bottom: 0
+    margin-top: .5rem
+    line-height: 3rem
+
+  h3
+    margin: .5rem 0
+
+  p
+    margin: .5rem 0
+
+  .hand-note
+  
+  .left
+    +span-columns(12,12)
+
+  .right
+    +span-columns(12, 12)
+
+  +at-breakpoint($tablet)
+    .left
+      +span-columns(6,12)
+      
+
+    .right
+      +span-columns(6 omega, 12)
+      
+    .hand-note
+      font-family: $font-family-handwriting
+      position: absolute
+      bottom: 0
+      right: 1rem
+
+  +at-breakpoint($desktop)
+
+.star
+  position: absolute
+  bottom: -2%
+  left: 5%
+  // animation: move-star 5s ease
+
+$numbers: one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen
+$percentage: 5%
+
+=star-magic
+  @each $number in $numbers
+    .star-#{$number}
+      @extend .star
+      left: $percentage
+      $percentage: $percentage +5%
+#s5
+  +star-magic
+  position: relative
+  overflow: hidden
+
+  div
+    &.yoda-wrapper
+      +transition(opacity 1s ease-in-out)
+      width: 39%
+      position: absolute
+      bottom: 0
+      left: 0
+      opacity: 0
+      z-index: 100
+
+      img
+        width: 100%
+
+    &.deathstar-wrapper
+      +transition(opacity .5s ease-in-out)
+      width: 15%
+      position: absolute
+      opacity: 0
+      right: 2%
+      top: 4%
+      img
+        width: 100%
+
+    &.x-wing-wrapper
+      position: absolute
+      opacity: 1
+      top: -100px
+      left: 0
+
+
+    &.tie-fighter-wrapper
+      position: absolute
+      opacity: 1
+      top: -200px
+      left: 0
+
+  &.jedi
+
+    div
+
+      &.yoda-wrapper
+        opacity: 1
+
+      &.deathstar-wrapper
+        opacity: 1
+        -webkit-animation: move 3s ease
+        -moz-animation: move 3s ease
+        -o-animation: move 3s ease
+        animation: move 3s ease
+
+      &.x-wing-wrapper
+        -webkit-animation: move-xwing 5s ease
+        -moz-animation: move-xwing 5s ease
+        -o-animation: move-xwing 5s ease
+        animation: move-xwing 5s ease
+
+      &.tie-fighter-wrapper
+        -webkit-animation: move-xwing 6s ease
+        -moz-animation: move-xwing 6s ease
+        -o-animation: move-xwing 6s ease
+        animation: move-xwing 6s ease
+
+  h2
+    @extend .large-text
+    color: #ffffff
+    z-index: 3
+    position: absolute
+    width: 70%
+    max-width: 47rem
+    margin: auto
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    display: table
+    height: auto
+
+  .one
+
+  .two
+
+  .three
