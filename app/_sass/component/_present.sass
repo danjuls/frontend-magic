@@ -19,13 +19,13 @@
     line-height: 3rem
 
   h3
-    margin: .5rem 0
+    margin: 1.5rem 0 .5rem 0
 
   p
-    margin: .5rem 0
+    margin: 1rem 0
 
   .hand-note
-  
+
   .left
     +span-columns(12,12)
 
@@ -35,11 +35,11 @@
   +at-breakpoint($tablet)
     .left
       +span-columns(6,12)
-      
+
 
     .right
       +span-columns(6 omega, 12)
-      
+
     .hand-note
       font-family: $font-family-handwriting
       position: absolute
@@ -47,13 +47,21 @@
       right: 1rem
 
   +at-breakpoint($desktop)
+    h2
+      font-size: 3.4rem
+
+    h3
+      font-size: 1.55rem
+
+    p
+      font-size: 1rem
+      line-height: 2rem
 
 .star
   position: absolute
   bottom: -2%
   left: 5%
   // animation: move-star 5s ease
-
 $numbers: one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen
 $percentage: 5%
 
@@ -63,6 +71,7 @@ $percentage: 5%
       @extend .star
       left: $percentage
       $percentage: $percentage +5%
+
 #s5
   +star-magic
   position: relative
@@ -104,6 +113,7 @@ $percentage: 5%
       top: -200px
       left: 0
 
+
   &.jedi
 
     div
@@ -119,29 +129,25 @@ $percentage: 5%
         animation: move 3s ease
 
       &.x-wing-wrapper
-        -webkit-animation: move-xwing 5s ease
-        -moz-animation: move-xwing 5s ease
-        -o-animation: move-xwing 5s ease
-        animation: move-xwing 5s ease
+        -webkit-animation: move-xwing 7s ease
+        -moz-animation: move-xwing 7s ease
+        -o-animation: move-xwing 7s ease
+        animation: move-xwing 7s ease
 
       &.tie-fighter-wrapper
-        -webkit-animation: move-xwing 6s ease
-        -moz-animation: move-xwing 6s ease
-        -o-animation: move-xwing 6s ease
-        animation: move-xwing 6s ease
+        -webkit-animation: move-xwing 8s ease
+        -moz-animation: move-xwing 8s ease
+        -o-animation: move-xwing 8s ease
+        animation: move-xwing 8s ease
 
   h2
     @extend .large-text
     color: #ffffff
     z-index: 3
     position: absolute
-    width: 70%
+    // width: 70%
     max-width: 47rem
     margin: auto
-    left: 0
-    right: 0
-    top: 0
-    bottom: 0
     display: table
     height: auto
 
@@ -150,3 +156,17 @@ $percentage: 5%
   .two
 
   .three
+
+  +at-breakpoint($tablet)
+  +at-breakpoint($desktop)
+    h2
+      left: 50%
+      top: 50%
+
+      -webkit-transform: translate(-50%, -50%)
+      -moz-transform: translate(-50%, -50%)
+      -ms-transform: translate(-50%, -50%)
+      -o-transform: translate(-50%, -50%)
+      transform: translate(-50%, -50%)
+  +at-breakpoint($large)
+

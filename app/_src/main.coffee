@@ -111,7 +111,7 @@ $ ->
   computer.waypoint ((direction) ->
     $(this).toggleClass('magic')
   ),
-    offset: '45%'
+    offset: '25%'
 
   starWars.waypoint ((direction) ->
     $(this).toggleClass('jedi')
