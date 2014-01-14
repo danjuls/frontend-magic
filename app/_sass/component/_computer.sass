@@ -8,19 +8,32 @@
   display: none
   z-index: 900
 
-.star
+.star-nova
   position: absolute
-  bottom: -2%
+  // bottom: -2%
   left: 5%
-  // animation: move-star 5s ease
+  height: 15px
+  width: 15px
 
+  // animation: move-star 5s ease
+// @function parse-unique-id($value)
+//   $letters: a b c d e f g h i j k l m n o p q r s t u v w x y z
+//   $value: unquote("")
+//   @for $i from 1 through str-length($value)
+//     $letter: str-slice($value, $i, $i + 1)
+//     @if index($letter, $letters) == false
+//       $value: str-insert($value, $letter, str-length($value) + 1)
+
+//   @return $value
+
+// $number: parse-unique-id(unique-id())
 $numbers: one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen
 $percentage: 5%
 
 =star-magic
   @each $number in $numbers
     .star-#{$number}
-      @extend .star
+      @extend .star-nova
       left: $percentage
       $percentage: $percentage +5%
 #s4
@@ -28,6 +41,19 @@ $percentage: 5%
   position: relative
   overflow: hidden
 
+.star-wrapper
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+  img
+    width: 15px
+    height: 15px
+
+    .star-one
+      top: 100px
 
 .computer
   +box-shadow(0px -2px 3px rgba(0, 0, 0, 0.15),0px 2px 3px 0px rgba(0, 0, 0, 0.15))

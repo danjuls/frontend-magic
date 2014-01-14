@@ -11,15 +11,8 @@ $ ->
     .addLayer("body section.bg", 0.3, "background")
     # .addLayer("body section h1", -1.25, "element")
     .addLayer("body .flylax", 0, "element")
-    # .addLayer("body section .wrapper.about-lax", -0.25, "element")
-    # .addLayer("body section.beginning", -3, "element")
-    .addLayer("body section .one", -1.25, "element")
-    .addLayer("body section .two", -0.5, "element")
-    .addLayer("body section .three", -1, "element")
-    # .addLayer("body section .computer-title", -2.25, "element")
-    # .addLayer("body section .c64-image", -2.25, "element")
 
-    # .addLayer "body section p", -2.5, "element"
+  $(window).stellar()
 
   # maxWidth = $(window).width()
   # maxHeight = $(window).height()
@@ -33,6 +26,14 @@ $ ->
   #     latitude: 57.703244
   #     longitude: 12.284946
   #   ]
+
+  # $('.star').each ->
+    # position = Math.floor((Math.random()*100)+1) + "px"
+    # $(this).addClass(position)
+    # console.log(position)
+    # $(this).css 'top', position
+
+
 
   listResponse =
     '<span class="tr"><span class="td">0 "DANIELS FUNHOUSE" 13 2A</span></span>\n
