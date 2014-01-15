@@ -12,7 +12,7 @@ $ ->
     # .addLayer("body section h1", -1.25, "element")
     .addLayer("body .flylax", 0, "element")
 
-  $(window).stellar()
+  # $(window).stellar()
 
   # maxWidth = $(window).width()
   # maxHeight = $(window).height()
@@ -20,18 +20,20 @@ $ ->
   #   width: maxWidth
   #   height: maxHeight
 
-  # $(".map").gMap
-  #   zoom: 15
-  #   markers: [
-  #     latitude: 57.703244
-  #     longitude: 12.284946
-  #   ]
-
-  # $('.star').each ->
-    # position = Math.floor((Math.random()*100)+1) + "px"
+  $('.star-wrapper img').each ->
+    positionBottom = Math.floor((Math.random()*100)+1) + "%"
+    positionLeft = Math.floor((Math.random()*100)+1) + "%"
     # $(this).addClass(position)
     # console.log(position)
-    # $(this).css 'top', position
+    $(this).css
+      bottom: positionBottom
+      left: positionLeft
+
+  window.onscroll = ->
+    speed = 4.0
+    apa = (-window.pageYOffset / speed) + "px"
+
+    console.log(apa)
 
 
 
