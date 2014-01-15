@@ -319,12 +319,23 @@ module.exports = (grunt) ->
       server: ["compass:server", "coffee:dist", "copy:stageCss", "copy:stageFonts", "jekyll:server"]
       dist: ["compass:dist", "coffee:dist", "copy:dist"]
 
+    validation:
+      dist:
+        options:
+          reset: grunt.option('reset') || false
+          stoponerror: false
+
+        files:
+          src: [
+            '<%= yeoman.dist %>/**/*.html'
+          ]
 
   # Define Tasks
   grunt.registerTask "server", (target) ->
     return grunt.task.run(["build", "connect:dist:keepalive"])  if target is "dist"
     grunt.task.run ["clean:server", "concurrent:server", "autoprefixer:server", "connect:livereload", "watch"]
 
+  grunt.loadNpmTasks 'grunt-html-validation'
 
   # No real tests yet. Add your own.
   grunt.registerTask "test", []
@@ -332,8 +343,37 @@ module.exports = (grunt) ->
   #   'clean:server',
   #   'concurrent:test',
   #   'connect:test'
-  grunt.registerTask "check", ["clean:server", "jekyll:check", "compass:server", "coffee:dist", "jshint:all", "csscss:check", "csslint:check"]
+  grunt.registerTask "check", [
+    "clean:server"
+    "jekyll:check"
+    "compass:server"
+    "coffee:dist"
+    "jshint:all"
+    "csscss:check"
+    "csslint:check"
+    "validation:dist"
+  ]
+
 
   # Jekyll cleans files from the target directory, so must run first
-  grunt.registerTask "build", ["clean:dist", "jekyll:dist", "concurrent:dist", "useminPrepare", "concat", "autoprefixer:dist", "cssmin", "uglify", "imagemin", "svgmin", "rev", "usemin", "htmlmin"]
-  grunt.registerTask "default", ["check", "test", "build"]
+  grunt.registerTask "build", [
+    "clean:dist"
+    "jekyll:dist"
+    "concurrent:dist"
+    "useminPrepare"
+    "concat"
+    "autoprefixer:dist"
+    "cssmin"
+    "uglify"
+    "imagemin"
+    "svgmin"
+    "rev"
+    "usemin"
+    "htmlmin"
+  ]
+
+  grunt.registerTask "default", [
+    "check"
+    "test"
+    "build"
+  ]
