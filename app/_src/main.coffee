@@ -8,9 +8,9 @@ $ ->
 
   parallaxer = new ParallaxScroller()
   parallaxer
-    .addLayer("body section.bg", 0.3, "background")
+    .addLayer("body section.bg", 0.85, "background")
     # .addLayer("body section h1", -1.25, "element")
-    .addLayer("body .flylax", 0, "element")
+    .addLayer("body .flylax", -0.5, "element")
 
   # $(window).stellar()
 
