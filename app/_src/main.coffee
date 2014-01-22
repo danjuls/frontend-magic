@@ -6,11 +6,11 @@ $ ->
   #   smoothScrolling: true
   #   forceHeight: true
 
-  parallaxer = new ParallaxScroller()
-  parallaxer
-    .addLayer("body section.bg", 0.85, "background")
-    # .addLayer("body section h1", -1.25, "element")
-    .addLayer("body .flylax", -0.5, "element")
+  # parallaxer = new ParallaxScroller()
+  # parallaxer
+  #   .addLayer("body section.bg", 0.85, "background")
+  #   # .addLayer("body section h1", -1.25, "element")
+  #   .addLayer("body .flylax", -0.5, "element")
 
   # $(window).stellar()
 
@@ -29,11 +29,11 @@ $ ->
       bottom: positionBottom
       left: positionLeft
 
-  window.onscroll = ->
-    speed = 4.0
-    apa = (-window.pageYOffset / speed) + "px"
+  # window.onscroll = ->
+  #   speed = 4.0
+  #   apa = (-window.pageYOffset / speed) + "px"
 
-    console.log(apa)
+  #   console.log(apa)
 
 
 
@@ -45,61 +45,67 @@ $ ->
 
   run = 0
   list = 0
-  $(".term").terminal ((cmd, trm) ->
-    console.log(cmd)
-    if (cmd is "LOAD")
-      trm.echo "PRESS PLAY ON TAPE"
-      setTimeout (->
-        trm.echo 'FOUND ENTER THE DRAGON'
-      ), 5000
-      # Activate loading screen
+  # $(".term").terminal ((cmd, trm) ->
+  #   console.log(cmd)
+  #   if (cmd is "LOAD")
+  #     trm.echo "PRESS PLAY ON TAPE"
+  #     setTimeout (->
+  #       trm.echo 'FOUND ENTER THE DRAGON'
+  #     ), 5000
+  #     # Activate loading screen
 
-    else if(cmd is 'LOAD"*",8' || cmd is 'LOAD "*",8')
-      run = 1
-      trm.echo 'SEARCHING FOR *'
-      setTimeout (->
-        trm.echo 'LOADING'
-      ), 1000
-      setTimeout (->
-        trm.echo 'READY'
-      ), 3000
+  #   else if(cmd is 'LOAD"*",8' || cmd is 'LOAD "*",8')
+  #     run = 1
+  #     trm.echo 'SEARCHING FOR *'
+  #     setTimeout (->
+  #       trm.echo 'LOADING'
+  #     ), 1000
+  #     setTimeout (->
+  #       trm.echo 'READY'
+  #     ), 3000
 
-    else if(cmd is 'LOAD"$",8' || cmd is 'LOAD "$",8')
-      list = 1
-      trm.echo 'SEARCHING FOR $'
-      setTimeout (->
-        trm.echo 'LOADING'
-      ), 1000
-      setTimeout (->
-        trm.echo 'READY'
-      ), 3000
+  #   else if(cmd is 'LOAD"$",8' || cmd is 'LOAD "$",8')
+  #     list = 1
+  #     trm.echo 'SEARCHING FOR $'
+  #     setTimeout (->
+  #       trm.echo 'LOADING'
+  #     ), 1000
+  #     setTimeout (->
+  #       trm.echo 'READY'
+  #     ), 3000
 
-    else if(cmd is 'LIST' && list == 1)
-      trm.listEcho listResponse
-      list = 0
+  #   else if(cmd is 'LIST' && list == 1)
+  #     trm.listEcho listResponse
+  #     list = 0
 
-    else if(cmd is 'RUN' && run == 1)
-      # Activate loading screen
+  #   else if(cmd is 'RUN' && run == 1)
+  #     # Activate loading screen
 
-      console.log('apa')
-      run = 0
+  #     console.log('apa')
+  #     run = 0
 
-    else
-      trm.echo '?SYNTAX ERROR'
-      trm.echo 'READY'
-  ),
-  prompt: ""
-  greetings: "     **** COMMODORE 64 BASIC V2 ****\n\n" + " 64K RAM SYSTEM   38911 BASIC BYTES FREE\n\nREADY."
-  keypress: (e, term) ->
-    term.insert String.fromCharCode(e.which).toUpperCase()
-    false
+  #   else
+  #     trm.echo '?SYNTAX ERROR'
+  #     trm.echo 'READY'
+  # ),
+  # prompt: ""
+  # greetings: "     **** COMMODORE 64 BASIC V2 ****\n\n" + " 64K RAM SYSTEM   38911 BASIC BYTES FREE\n\nREADY."
+  # keypress: (e, term) ->
+  #   term.insert String.fromCharCode(e.which).toUpperCase()
+  #   false
+
+  $('.start').on "scroll", ->
+    $(this).addClass('magic')
+
+  $('#button').on 'click', ->
+    $(this).toggleClass('on')
 
 
   width: 570
   height: 300
   start = $(".start")
-  computer = $(".computer")
-  starWars = $('#s5')
+  # computer = $(".computer")
+  # starWars = $('#s5')
   # yoda.waypoint (direction) ->
   #   context: '.start'
   #   offset: 4000px
@@ -108,15 +114,15 @@ $ ->
   #   $(this).toggleClass('jedi')
   #   # alert('hit')
   start.waypoint ((direction) ->
-    $(this).toggleClass('magic')
+    $(this).addClass('magic')
   ),
-    offset: -50
-  computer.waypoint ((direction) ->
-    $(this).toggleClass('magic')
-  ),
-    offset: '25%'
+    offset: -5
+  # computer.waypoint ((direction) ->
+  #   $(this).toggleClass('magic')
+  # ),
+  #   offset: '25%'
 
-  starWars.waypoint ((direction) ->
-    $(this).toggleClass('jedi')
-  ),
-    offset: '20%'
+  # starWars.waypoint ((direction) ->
+  #   $(this).toggleClass('jedi')
+  # ),
+  #   offset: '20%'

@@ -1,0 +1,158 @@
+.test-image
+  .outer-wrapper
+    +span-columns(12, 12)
+    height: 100%
+    // border: 1px solid black
+
+    .row
+      width: 5.25%
+      float: left
+      height: 100%
+
+      &.four
+        .bg
+          &.brown
+            border-left: none
+
+      .white
+        background-color: white
+        display: block
+        width: 100%
+        height: 1%
+
+
+      .black
+        background-color: black
+        display: block
+        width: 100%
+        height: 1%
+
+      .bg
+        background-color: #818181
+        display: block
+        width: 100%
+        height: 7%
+        border: 1px solid white
+
+        &.split
+          border-top: none
+          border-bottom: none
+
+        &.green
+          border-bottom: none
+          border-top: none
+          &.first
+            border-right: none
+
+          &.second
+            border-right: none
+
+        &.first
+          border-top: 1px solid white
+
+        &.last
+          border-bottom: 1px solid white
+
+        &.pink
+          border-bottom: none
+          border-top: none
+
+          &.last
+            border-bottom: 1px solid white
+            border-right: none
+
+          &.alast
+            border-right: none
+
+        &.blue
+          border-bottom: none
+          border-top: none
+
+          &.first
+            border-top: 1px solid white
+            border-left: none
+
+            &.right
+              border-left: 1px solid white
+              border-right: none
+
+          &.last
+            border-bottom: 1px solid white
+            border-left: none
+
+            &.right
+              border-left: 1px solid white
+              border-right: none
+
+        &.brown
+          border-bottom: none
+          border-top: none
+
+          &.first
+            border-top: 1px solid white
+            &.right
+              border-right: none
+
+          &.last
+            border-bottom: 1px solid white
+            &.right
+              border-right: none
+
+        &.moss
+          border-bottom: none
+          border-top: none
+
+          &.first
+            border-left: none
+            border-top: 1px solid white
+          &.second
+            border-left: none
+
+        &.lilac
+          border-bottom: none
+          border-top: none
+
+          &.last
+            border-left: none
+            border-bottom: 1px solid white
+
+          &.alast
+            border-left: none
+      .green
+        background-color: #39a082
+
+      .half.green
+        height: 50%
+
+      .pink
+        background-color: #c25d7d
+
+      .half.pink
+        height: 50%
+
+      .blue
+        background-color: #5981e3
+
+      .brown
+        background-color: #a57f1a
+
+      .moss
+        background-color: #80960f
+
+      .half.moss
+        height: 50%
+
+      .lilac
+        background-color: #826bf1
+
+      .half.lilac
+        height: 50%
+
+      .outer.side.black
+        height: 7%
+
+      .outer.side.white
+        height: 7%
+
+      .outer .bottom .white
+        height: 1%
